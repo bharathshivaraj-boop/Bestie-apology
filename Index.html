@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff0f5">
+<title>One Sorry… For Our Friendship ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{box-sizing:border-box}
+
+body{
+ margin:0;
+ min-height:100vh;
+ padding:18px;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ background:linear-gradient(140deg,#ffe7f0,#eee5ff,#fff0e9);
+ color:#49394d;
+ font-family:'Poppins',sans-serif;
+ overflow-x:hidden;
+}
+
+.book{
+ width:100%;
+ max-width:470px;
+ min-height:620px;
+ background:#fffdfd;
+ border-radius:27px;
+ padding:25px 22px;
+ box-shadow:0 18px 55px #80507825;
+ position:relative;
+ overflow:hidden;
+ text-align:center;
+}
+
+.book:before{
+ content:"";
+ position:absolute;
+ inset:9px;
+ border:1px solid #f4dce9;
+ border-radius:20px;
+ pointer-events:none;
+}
+
+.progress{
+ height:6px;
+ background:#f5e6ef;
+ border-radius:20px;
+ margin:5px 5px 23px;
+ overflow:hidden;
+}
+
+.bar{
+ height:100%;
+ width:0;
+ background:linear-gradient(90deg,#e88eb5,#ad8bdf);
+ transition:width .4s;
+}
+
+.page{display:none;animation:appear .55s ease}
+.page.active{display:block}
+
+@keyframes appear{
+ from{opacity:0;transform:translateY(13px)}
+ to{opacity:1;transform:translateY(0)}
+}
+
+h1{
+ color:#b65e8c;
+ font-size:27px;
+ line-height:1.5;
+}
+
+h2{
+ color:#b65e8c;
+ font-size:21px;
+ line-height:1.6;
+}
+
+p{
+ text-align:left;
+ line-height:2;
+ font-size:15px;
+ margin:13px 0;
+}
+
+.center{text-align:center}
+.emoji{font-size:43px;margin:12px}
+
+.small{
+ font-size:12px;
+ color:#a28ba0;
+ text-align:center;
+}
+
+.note{
+ background:#fff2f7;
+ border:1px dashed #efc6da;
+ border-radius:17px;
+ padding:15px;
+ margin:16px 0;
+}
+
+button{
+ border:0;
+ border-radius:25px;
+ padding:13px 23px;
+ margin:12px 4px;
+ background:linear-gradient(100deg,#d77da8,#ae8bd5);
+ color:white;
+ font-size:14px;
+ font-weight:600;
+ cursor:pointer;
+ font-family:inherit;
+}
+
+button:active{transform:scale(.96)}
+
+input,textarea{
+ width:100%;
+ border:1px solid #e9d4e2;
+ border-radius:12px;
+ padding:12px;
+ margin:7px 0;
+ font-family:inherit;
+ font-size:14px;
+ background:#fffafd;
+ color:#49394d;
+}
+
+textarea{min-height:65px;resize:vertical}
+
+.footer{
+ font-size:11px;
+ color:#b69caf;
+ margin-top:20px;
+}
+
+.floating{
+ position:fixed;
+ bottom:-30px;
+ pointer-events:none;
+ animation:floatup 7s linear forwards;
+ z-index:5;
+}
+
+@keyframes floatup{
+ to{transform:translateY(-110vh) rotate(35deg);opacity:0}
+}
+</style>
+</head>
+
+<body>
+
+<main class="book">
+
+<div class="progress">
+ <div class="bar" id="bar"></div>
+</div>
+
+<!-- PAGE 1 -->
+<section class="page active">
+ <div class="emoji">💌</div>
+ <h1>Ondu Chikka Sorry… ♡</h1>
+ <h2>Something special for you!</h2>
+ <p class="center">
+  Hey, this little surprise is just for you.
+  Ninagaagi ondu putta surprise.
+ </p>
+ <p class="center">
+  No big expectations. Just a few words from my heart.
+ </p>
+ <button onclick="next()">Open my letter 💗</button>
+ <div class="footer">A little scrapbook of our friendship</div>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page">
+ <div class="emoji">🥺</div>
+ <h2>Modalu ondu maatu… First, I'm sorry.</h2>
+ <p>
+  Naanu ninage novu maadiddakke nijavaagiyoo kshame kelu ttene.
+ </p>
+ <p>
+  When I said we should separate, I didn't think enough about how those words might hurt you.
+ </p>
+ <p>
+  Ninna manassige novagirabahudu. Nanna maatugalige naane javabdaar.
+  I'm genuinely sorry.
+ </p>
+ <div class="note">
+  <p class="center">You didn't deserve to be hurt by my words. ❤️</p>
+ </div>
+ <button onclick="next()">Continue ♡</button>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page">
+ <div class="emoji">🌧️</div>
+ <h2>Nanna manassinalli enittu?</h2>
+ <p>
+  I kept overthinking my future.
+  Kelasa siguttaa? Nanna jeevanadalli enagutte?
+  Naale naanu olleya jeevana kattikollaballena?
+ </p>
+ <p>
+  Sometimes I worry about whether I'll become capable enough to make the people I care about happy.
+ </p>
+ <p>
+  Aa bhayadalli dooravagona anta helide.
+  But my fear is not an excuse for hurting you.
+ </p>
+ <div class="note">
+  <p class="center">I should have talked to you instead of pushing you away.</p>
+ </div>
+ <button onclick="next()">Continue ♡</button>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page">
+ <div class="emoji">🌷</div>
+ <h2>Ninna bagge ondu maatu</h2>
+ <p>
+  I know you sometimes keep your hurt to yourself.
+  Ella vishayagalannu neene manassinalli ittukolluva sandarbhagalirabahudu.
+ </p>
+ <p>
+  I may not always understand what you're feeling, and I don't want to assume that I do.
+ </p>
+ <p>
+  But your feelings matter. You don't have to pretend you're okay just to make things easier for others.
+ </p>
+ <p>
+  Ninna bhaavanegalige naanu bele koduttene.
+ </p>
+ <button onclick="next()">One more thing ♡</button>
+</section>
+
+<!-- PAGE 5 -->
+<section class="page">
+ <div class="emoji">🧸</div>
+ <h2>Our little memories</h2>
+ <p class="center">
+  Kelavu nenapugalu yaavagaloo special agiruttave.
+ </p>
+ <div class="note">
+  <label>Our funniest moment 😂</label>
+  <textarea placeholder="leg fracture moment nenp idhya 🤭"></textarea>
+  <label>A moment I'll never forget 🌸</label>
+  <textarea placeholder="Actually two moments idhe ondhu food fest dina neenu kottidhu look mathe innondhu neenu nin mansina math helkondhidhu innu nenp idhe may 4 "></textarea>
+  <label>Something I appreciate about you 💗</label>
+  <textarea placeholder="The way you are nange thumba ishtaa 🥰 ene adru smile indhane face madthyaa adhu nange thumba ishtaa"></textarea>
+ </div>
+ <p class="small">
+  Sorry for all the inconvenience and I will try to make sure that I will not repeat this again
+ </p>
+ <button onclick="next()">Next page ♡</button>
+</section>
+
+<!-- PAGE 6 -->
+<section class="page">
+ <div class="emoji">😂</div>
+ <h2>Smile Challenge!</h2>
+ <p class="center">
+  Okay, serious talks are enough for a minute.
+  Swalpa nagona!
+ </p>
+ <div class="note">
+  <h2 class="center">One question 🤔</h2>
+  <p class="center">
+   If I stop overthinking for one day, what happens?
+  </p>
+  <p class="center">A) History gets created!</p>
+  <p class="center">B) My brain finally gets a holiday!</p>
+  <p class="center">C) Both 😂</p>
+ </div>
+ <p class="center">
+  Correct answer: C! My brain needs a vacation. 🤣
+ </p>
+ <button onclick="next()">Did you smile? 😄</button>
+</section>
+
+<!-- PAGE 7 -->
+<section class="page">
+ <div class="emoji">🤝</div>
+ <h2>My promises</h2>
+ <p>Nanninda kelavu chikka bharavasegalu…</p>
+ <div class="note">
+  <p>♡ I'll communicate instead of running away.</p>
+  <p>♡ I'll listen instead of assuming.</p>
+  <p>♡ I won't use separation as a response to my fears.</p>
+  <p>♡ I'll respect your feelings and your space.</p>
+  <p>♡ I'll work on my future step by step.</p>
+ </div>
+ <p>
+  I know promises mean little without actions.
+  I'll try to show these through my behaviour.
+ </p>
+ <button onclick="next()">Continue ♡</button>
+</section>
+
+<!-- PAGE 8 -->
+<section class="page">
+ <div class="emoji">❤️</div>
+ <h2>One honest thing…</h2>
+ <p>
+  You already know that I have feelings for you.
+  Ninna bagge nanage preeti ide.
+ </p>
+ <p>
+  But I don't want this website or my feelings to become pressure on you.
+ </p>
+ <p>
+  You don't have to give me an answer, change your feelings, or promise anything.
+ </p>
+ <p>
+  Ninna nirdhaaravannu naanu gauravisuttene.
+  Our friendship matters to me too.
+ </p>
+ <div class="note">
+  <p class="center">
+   No pressure. No expectations. Just honesty. ♡
+  </p>
+ </div>
+ <button onclick="next()">Last few words ♡</button>
+</section>
+
+<!-- PAGE 9 -->
+<section class="page">
+ <div class="emoji">🌈</div>
+ <h2>A little request…</h2>
+ <p>
+  Please don't feel that you have to forgive me immediately.
+  Ninage samaya bekaadare tagolabahudu.
+ </p>
+ <p>
+  If you ever want to tell me how you felt, I'll listen without arguing or making excuses.
+ </p>
+ <p>
+  I hope we can share happy moments again, at a pace that feels comfortable for both of us.
+ </p>
+ <button onclick="next()">Open the final page 💌</button>
+</section>
+
+<!-- PAGE 10 -->
+<section class="page">
+ <div class="emoji">🌸</div>
+ <h1>Thank you for being you!</h1>
+ <h2>Neenu tumba vishesha.</h2>
+ <p class="center">
+  Thank you for being a beautiful part of my life.
+ </p>
+ <p class="center">
+  Ninna mukhadalli yaavagalu nagu irali.
+  Ninna kanasugalella nanasaagali.
+ </p>
+ <div class="note">
+  <h2 class="center">One last thing…</h2>
+  <p class="center">
+   Ninna manassige novu maadiddakke sorry.
+   I hope better days and happier memories are waiting ahead. ❤️
+  </p>
+ </div>
+ <h2 class="center">Stay happy. Keep smiling. 🫶</h2>
+ <p class="center">— Yours lovely tarle 😁</p>
+ <button onclick="restart()">Read again ↻</button>
+</section>
+
+<div class="footer" id="pageNumber">Page 1 / 10</div>
+
+</main>
+
+<script>
+const pages=document.querySelectorAll('.page');
+let current=0;
+
+function update(){
+ pages.forEach((page,index)=>{
+  page.classList.toggle('active',index===current);
+ });
+ document.getElementById('bar').style.width=
+ ((current+1)/pages.length*100)+'%';
+ document.getElementById('pageNumber').textContent=
+ 'Page '+(current+1)+' / '+pages.length;
+}
+
+function next(){
+ if(current<pages.length-1){
+  current++;
+  update();
+ }
+}
+
+function restart(){
+ current=0;
+ update();
+}
+
+function createHeart(){
+ const heart=document.createElement('div');
+ heart.className='floating';
+ heart.textContent=['♡','♥','🌸','✨'][Math.floor(Math.random()*4)];
+ heart.style.left=Math.random()*100+'vw';
+ heart.style.fontSize=(15+Math.random()*18)+'px';
+ heart.style.animationDuration=(5+Math.random()*5)+'s';
+ document.body.appendChild(heart);
+ setTimeout(()=>heart.remove(),10000);
+}
+
+setInterval(createHeart,1000);
+update();
+</script>
+
+</body>
+</html>
